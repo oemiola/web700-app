@@ -3,7 +3,7 @@
 /* Navigation Bar */
 .navbar {
   background: linear-gradient(to right, #f196e2, #731382);
-  box-shadow: 0 4px 4px rgba(37, 31, 31, 0.1);
+  box-shadow: 0 4px 4px rgba(86, 39, 83, 0.3);
 }
 
 .navbar-brand {
@@ -43,8 +43,8 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #f4df46;
-  box-shadow: 0 2px 4px #769c22;
+  background-color: #a3eaf9;
+  box-shadow: 0 2px 4px #5fc6e2;
 }
 /* Table cells inside "odd" numbered table rows */
 section table tr:nth-child(odd) td {
