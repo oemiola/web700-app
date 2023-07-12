@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Font+Name&display=swap');
+
+/* Navigation Bar */
+.navbar {
+  background: linear-gradient(to right, #f196e2, #731382);
+  box-shadow: 0 4px 8px rgba(76, 73, 73, 0.696);
+}
+
+.navbar-brand {
+  font-family: 'Font Name', Georgia;
+  color: #191ce7;
+  text-shadow: 4px 4px 4px #3636be;
+  -webkit-text-stroke: 2px #000;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  font-family: 'Font Name', fantasy;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #e4c61a;
+}
+
+/* App Background */
+/* check App background part for cover image something*/
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body {
+  background: linear-gradient(to bottom, #7a73b9, #e2e1ed);
+}
+
+/* "Primary" Button */
+.btn-primary {
+  background-color: #0d4d85;
+  background-image: linear-gradient(to bottom, #8f8eb7, #323eee);
+  box-shadow: 0 2px 4px #3194a6;
+}
+
+.btn-primary:hover {
+  background-color: #f4df46;
+  box-shadow: 0 2px 4px #769c22;
+}
+/* Table cells inside "odd" numbered table rows */
+section table tr:nth-child(odd) td {
+    background-color: #9956b6;
+  }
+  
+  section table tr:nth-child(odd) td {
+    background-image: linear-gradient(to bottom, #ffa1f1, #ffffff);
+  }
+  
+/* All "Heading" elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Font Name', Baskerville;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* All "Anchor" elements (HTML Links) */
+a {
+  color: #0055ff;
+}
+
+a:hover {
+  color: #dc7249;
+}
+
+/* Fieldset "Legends" */
+legend {
+  padding: 5px 10px;
+  font-family: 'Font Name', verdana;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(59, 58, 58, 0.725);
+}
