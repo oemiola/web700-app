@@ -53,7 +53,6 @@ const path = require('path');
     });
   }
 
-
 // defining getTAs function
   function getTAs() {
     return new Promise((resolve, reject) => {
@@ -70,7 +69,7 @@ const path = require('path');
     });
   }
 
-  
+  // defining getStudentsByCourse function
   function getStudentsByCourse(course) {
     return new Promise((resolve, reject) => {
      
@@ -82,18 +81,17 @@ const path = require('path');
         }
       });
   }
-
-  function getStudentByNum(num) {
-    return new Promise((resolve, reject) => {
-      var matchedStudentNum = dataCollection.students.filter(studentByNumber => studentByNumber.studentNum == num);  
-      if (matchedStudentNum.length > 0) {
-        resolve(matchedStudentNum);
-      } else {
-        reject("No results returned");
-      }
-    });
-  }
-
+// defining getStudentByNum function
+function getStudentByNum(num) {
+  return new Promise((resolve, reject) => {
+    const matchedStudent = dataCollection.students.find(studentByNum => studentByNum.studentNum == num);
+    if (matchedStudent) {
+      resolve(matchedStudent);
+    } else {
+      reject(new Error("No student found with the provided student number."));
+    }
+  });
+}
 
 // defining getCourses function
   function getCourses() {
@@ -123,6 +121,48 @@ const path = require('path');
     });
   }
 
+// defining getCourseById function
+function getCourseById(id) {
+  return new Promise((resolve, reject) => {
+    const course = dataCollection.courses.find((course) => course.courseId === id);
+
+    if (course) {
+      resolve(course);
+    } else {
+      reject("query returned 0 results");
+    }
+  });
+}
+
+// define updateStudent function
+
+function updateStudent(studentData) {
+  return new Promise((resolve, reject) => {
+    // Convert the studentNum to a number before searching
+    const studentNum = Number(studentData.studentNum);
+
+    // Find the index of the student with matching studentNum
+    const studentIndex = dataCollection.students.findIndex((student) => student.studentNum === studentNum);
+
+    if (studentIndex !== -1) {
+      // Update the existing student with the new data
+      dataCollection.students[studentIndex] = {
+        ...studentData,
+        TA: studentData.TA === "on", // Convert "on" to true, or undefined to false
+      };
+
+      // Resolve the promise to indicate successful update
+      resolve();
+    } else {
+      console.log("Student not found!");
+      // If the student is not found, reject the promise with an error message
+      reject(new Error("Student not found"));
+    }
+  });
+}
+
+    
+
 // exporting modules 
   module.exports = {
     initialize,
@@ -132,4 +172,6 @@ const path = require('path');
     getStudentByNum,
     getStudentsByCourse,
     addStudent,
+    getCourseById,
+    updateStudent,
   };
